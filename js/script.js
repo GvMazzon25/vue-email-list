@@ -10,7 +10,7 @@ const app = new Vue({
     data: {
         apiUrl:'https://flynn.boolean.careers/exercises/api/random/mail',
         emailSingle: '',
-        emailCounter: 0,
+        emailList: '',
     },
     created() {
         this.getApiEmails();
@@ -28,6 +28,12 @@ const app = new Vue({
                 console.log(error);
             })
         },
-        
+        getCounter(){
+            for(let i = 0; i <= 10; i++) {
+                const mailElement ='<li class=email">{{ emailSingle }}</li>';
+                emailList = document.getElementById('list').innerHtml ; 
+            } 
+            return emailList;
+        }
     }
 });
