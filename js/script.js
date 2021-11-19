@@ -27,6 +27,7 @@ const app = new Vue({
                 // handle error
                 console.log(error);
             })
-        }
+        },
+        
     }
 });
