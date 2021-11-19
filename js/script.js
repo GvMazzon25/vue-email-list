@@ -12,21 +12,18 @@ const app = new Vue({
         emailSingle: '',
         emailCounter: 0,
     },
-    computed: {
-
-    },
-    created: {
-
+    created() {
+        this.getApiEmails();
     },
     methods: {
         getApiEmails() {
             axios.get(this.apiUrl)
-            axios.get('/user?ID=12345')
-            .then(function (response) {
+            .then( response => {
                 // handle success
                 console.log(response);
+                this.emailSingle = response.data.response;
             })
-            .catch(function (error) {
+            .catch( error => {
                 // handle error
                 console.log(error);
             })
