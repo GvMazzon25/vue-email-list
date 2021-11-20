@@ -17,23 +17,18 @@ const app = new Vue({
     },
     methods: {
         getApiEmails() {
-            axios.get(this.apiUrl)
-            .then( response => {
-                // handle success
-                console.log(response);
-                this.emailSingle = response.data.response;
-            })
-            .catch( error => {
-                // handle error
-                console.log(error);
-            })
-        },
-        getCounter(){
             for(let i = 0; i <= 10; i++) {
-                const mailElement ='<li class=email">{{ emailSingle }}</li>';
-                emailList = document.getElementById('list').innerHtml ; 
+                axios.get(this.apiUrl)
+                .then( response => {
+                    // handle success
+                    console.log(response);
+                    this.emailSingle = response.data.response;
+                })
+                .catch( error => {
+                    // handle error
+                    console.log(error);
+                })
             } 
-            return emailList;
-        }
+        },
     }
 });
