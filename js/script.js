@@ -10,7 +10,7 @@ const app = new Vue({
     data: {
         apiUrl:'https://flynn.boolean.careers/exercises/api/random/mail',
         emailSingle: '',
-        emailList: '',
+        emailList: [],
     },
     created() {
         this.getApiEmails();
@@ -23,6 +23,7 @@ const app = new Vue({
                     // handle success
                     console.log(response);
                     this.emailSingle = response.data.response;
+                    this.emailList.push(this.emailSingle)  
                 })
                 .catch( error => {
                     // handle error
