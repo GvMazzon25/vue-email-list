@@ -31,5 +31,12 @@ const app = new Vue({
                 })
             } 
         },
+        getBonus() {
+            if(this.emailList[i] !== 9){
+                const newClass = document.getElementsById('list');
+                newClass.className = 'hide';
+                newClass.className = element.classList + 'hide';
+            }
+        }
     }
 });
